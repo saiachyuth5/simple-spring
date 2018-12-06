@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = “achyuth007/simple-spring”
+    registry = “achyuth007/simple"+"-"+"spring"
     registryCredential = "dockerhub"
   }
   agent any
