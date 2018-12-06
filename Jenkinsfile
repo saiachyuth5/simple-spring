@@ -8,7 +8,7 @@ pipeline {
     stage(‘Build’) {
       steps{
         script {
-          docker.build registry + “:${env.BUILD_NUMBER}”
+          docker.build registry 
         }
       }
     }
