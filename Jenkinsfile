@@ -1,6 +1,5 @@
 pipeline {
   environment {
-    registry = “achyuth007/simple"+"-"+"spring"
     registryCredential = "dockerhub"
   }
   agent any
@@ -8,7 +7,7 @@ pipeline {
     stage(‘Build’) {
       steps{
         script {
-          docker.build registry 
+          app = docker.build("achyuth007/simple-spring")
         }
       }
     }
@@ -16,7 +15,8 @@ pipeline {
       steps{
         script {
           docker.withRegistry( ‘’, registryCredential ) {
-            dockerImage.push()
+           // dockerImage.push()
+          app.push("${env.BUILD_NUMBER}")
           }
         }
       }
