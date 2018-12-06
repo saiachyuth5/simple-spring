@@ -14,7 +14,7 @@ pipeline {
      stage(‘Deploy’) {
       steps{
         script {
-          docker.withRegistry( ‘https://registry.hub.docker.com’, registryCredential ) {
+          docker.withRegistry( "https://registry.hub.docker.com", registryCredential ) {
            // dockerImage.push()
           app.push("${env.BUILD_NUMBER}")
           }
