@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: simple-spring
+spec:
+  containers:
+    - name: simple-spring-container
+      image: index.docker.io/achyuth007/simple-spring:latest
+      imagePullPolicy: Always
+      command: [ "echo", "SUCCESS" ]
