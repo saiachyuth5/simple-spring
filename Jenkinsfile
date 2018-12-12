@@ -21,5 +21,15 @@ pipeline {
         }
       }
     }
+    stage('Deploy to ACS'){
+      steps{
+          acsDeploy(azureCredentialsId: 'dbb6d63b-41ab-4e71-b9ed-32b3be06eeb8',
+            resourceGroupName: 'ilink',
+            containerService: 'gajacluster | AKS',
+            configFilePaths: '**/sample.yaml',
+            enableConfigSubstitution: true
+                    )
+      }
+    }
   }
 }
