@@ -11,7 +11,7 @@ pipeline {
         }
       }
     }
-    stage(‘Build Docker Image’) {
+    stage(‘Build docker’) {
       steps{
         script {
           app = docker.build("achyuth007/simple-spring")
