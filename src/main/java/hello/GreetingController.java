@@ -16,4 +16,8 @@ public class GreetingController {
         return new Greeting(counter.incrementAndGet(),
                             String.format(template, name));
     }
+    @RequestMapping("/")
+    public String defualtgreeting(){
+	return("Simple Hello World App");
+	}
 }
