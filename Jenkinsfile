@@ -4,6 +4,13 @@ pipeline {
   }
   agent any
   stages {
+    stage(‘Build springboot app’) {
+      steps{
+        script {
+          sh 'mvn clean install'
+        }
+      }
+    }
     stage(‘Build’) {
       steps{
         script {
