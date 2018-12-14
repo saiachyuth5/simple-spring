@@ -4,14 +4,14 @@ pipeline {
   }
   agent any
   stages {
-    stage(‘Build JAR’) {
+    stage(‘Build’) {
       steps{
         script {
           sh 'mvn clean install'
         }
       }
     }
-    stage(‘Build’) {
+    stage(‘Build Docker Image’) {
       steps{
         script {
           app = docker.build("achyuth007/simple-spring")
