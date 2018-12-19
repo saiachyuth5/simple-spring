@@ -18,6 +18,6 @@ public class GreetingController {
     }
     @RequestMapping("/")
     public String defualtgreeting(){
-	return("Hello World App");
+	return("This is spring app 3");
 	}
 }
